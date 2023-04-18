@@ -11,11 +11,18 @@ namespace Testing.Controllers
 {
     public class ProductController : Controller
     {
-        private IProductRepository repo;
+        private readonly IProductRepository repo;
 
+        //Constructor
         public ProductController(IProductRepository repo)
         {
             this.repo = repo;
+        }
+
+        public IActionResult DeleteProduct(Product product)
+        {
+            repo.DeleteProduct(product);
+            return RedirectToAction("Index");
         }
 
         // GET: /<controller>/

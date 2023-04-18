@@ -5,7 +5,9 @@ namespace Testing.Models
 {
 	public interface IProductRepository
 	{
-		public IEnumerable<Product> GetAllProducts();
+        public void DeleteProduct(Product product);
+
+        public IEnumerable<Product> GetAllProducts();
 
 		public Product GetProduct(int id);
 
@@ -16,6 +18,7 @@ namespace Testing.Models
 		public IEnumerable<Category> GetCategories();
 
 		public Product AssignCategory();
+
     }
 }
 
